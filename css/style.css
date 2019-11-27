@@ -1,1 +1,77 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/white-striped-cloth.png");
+  font-family: sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.head-title {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.head-name {
+  font-style: italic;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.homeworks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.homework {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 31%;
+  height: 140px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  border: 3px solid blueviolet;
+  border-radius: 50%;
+}
+
+.homework-title {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */
