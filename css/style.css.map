@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/style.sass",
+        "../sass/block/_homeworkspage.sass"
+    ],
+    "names": [],
+    "file": "style.css"
+}
