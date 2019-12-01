@@ -30,3 +30,50 @@ function makeTest() {
 }
 
 makeTest();
+
+
+function isPolindrom1(str) {
+
+  let arr = str.split('');
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    newArr.unshift(arr[i]);
+  }
+
+  let result = newArr.join('');
+
+  return result === str;
+}
+
+console.log(isPolindrom1('55055'));
+
+
+function isPolindrom2(str) {
+  let result = '';
+
+  for (let i = 0; i < str.length; i++) {
+    result += str[str.length - 1 - i];
+  }
+
+  return result === str;
+}
+
+console.log(isPolindrom2('kkikikk'));
+
+
+function isPolindrom3(str) {
+  let result = '';
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[str.length - 1 - i]) {
+      result = 'yes';
+    } else {
+      result = 'no';
+    }
+  }
+
+  return result;
+}
+
+console.log(isPolindrom3('12345'));
