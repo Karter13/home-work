@@ -64,19 +64,14 @@ function isPolindrom3(str) {
   let result = '';
 
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[str.length - 1 - i]) {
-      result = 'yes';
-    } else {
-      result = 'no';
-    }
+    result = (str[i] === str[str.length - 1 - i]) ? 'yes' : 'no';
   }
-
   return result;
 }
+console.log(isPolindrom3('99999'));
 
-console.log(isPolindrom3('12345'));
 
-// Fixed bug
+// // Fixed bug
 function getMultiplyTable() {
   const { body } = document;
   const table = document.createElement('table');
