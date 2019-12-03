@@ -1,6 +1,5 @@
 
 function getNumWord(num, word1, word2, word5) {
-
   let result = '';
 
   switch (true) {
@@ -22,10 +21,10 @@ function getNumWord(num, word1, word2, word5) {
 }
 
 function makeTest() {
-  let applesCount = parseInt(prompt('Сколько яблок?'));
+  const applesCount = parseInt(prompt('Сколько яблок?'), 10);
   if (applesCount) {
-    alert('У вас ' + applesCount + ' ' + getNumWord(applesCount,
-      'яблоко', 'яблока', 'яблок'));
+    alert(`У вас ${applesCount} ${getNumWord(applesCount,
+      'яблоко', 'яблока', 'яблок')}`);
   }
 }
 
@@ -33,15 +32,14 @@ makeTest();
 
 
 function isPolindrom1(str) {
-
-  let arr = str.split('');
-  let newArr = [];
+  const arr = str.split('');
+  const newArr = [];
 
   for (let i = 0; i < arr.length; i++) {
     newArr.unshift(arr[i]);
   }
 
-  let result = newArr.join('');
+  const result = newArr.join('');
 
   return result === str;
 }
@@ -78,12 +76,11 @@ function isPolindrom3(str) {
 
 console.log(isPolindrom3('12345'));
 
-//Fixed bug
+// Fixed bug
 function getMultiplyTable() {
-  const body = document.body;
+  const { body } = document;
   const table = document.createElement('table');
-  let tr, td, tdInner = '';
-
+  let tr; let td;
   table.style.width = '100%';
   table.setAttribute('border', '1');
 
