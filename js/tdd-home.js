@@ -38,8 +38,11 @@ function arrayDiff(arr1, arr2) {
     if (arr1.length === 0 || arr2.length === 0) {
       updatedArray.push(arr1[i]);
     }
+
     for (let j = 0; j < arr2.length; j++) {
-      if (arr1[i] !== arr2[j]) {
+      if (arr1[i] === arr2[j]) {
+        break;
+      } else {
         updatedArray.push(arr1[i]);
         break;
       }
@@ -49,5 +52,5 @@ function arrayDiff(arr1, arr2) {
 }
 
 console.log(arrayDiff([], [4, 5]));
-console.log(arrayDiff([3, 4, 5], [3]));
+console.log(arrayDiff([3, 4, 5], [3, 3, 4, 22]));
 console.log(arrayDiff([1, 8, 2], []));
