@@ -35,22 +35,27 @@ function arrayDiff(arr1, arr2) {
   const updatedArray = [];
 
   for (let i = 0; i < arr1.length; i++) {
-    if (arr1.length === 0 || arr2.length === 0) {
-      updatedArray.push(arr1[i]);
-    }
+    let found = false;
 
     for (let j = 0; j < arr2.length; j++) {
       if (arr1[i] === arr2[j]) {
-        break;
-      } else {
-        updatedArray.push(arr1[i]);
+        found = true;
         break;
       }
+    }
+
+    if (!found) {
+      updatedArray.push(arr1[i]);
     }
   }
   return updatedArray;
 }
 
+// eslint-disable-next-line max-len
+// function arrayDiff(arr1, arr2) {
+//   return arr1.filter((item) => !arr2.includes(item));
+// }
+
 console.log(arrayDiff([], [4, 5]));
-console.log(arrayDiff([3, 4, 5], [3, 3, 4, 22]));
+console.log(arrayDiff([3, 4], [3, 3, 10, 5]));
 console.log(arrayDiff([1, 8, 2], []));

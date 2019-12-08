@@ -28,7 +28,7 @@ function makeTest() {
   }
 }
 
-makeTest();
+// makeTest();
 
 
 function isPolindrom1(str) {
@@ -44,7 +44,7 @@ function isPolindrom1(str) {
   return result === str;
 }
 
-console.log(isPolindrom1('55055'));
+console.log(isPolindrom1('rrrr'));
 
 
 function isPolindrom2(str) {
@@ -73,8 +73,7 @@ function isPolindrom3(str) {
   }
   return result;
 }
-console.log(isPolindrom3('113321'));
-
+console.log(isPolindrom3('ggggg'));
 
 // Fixed bug
 function getMultiplyTable() {
@@ -101,4 +100,4 @@ function getMultiplyTable() {
   body.append(table);
 }
 
-getMultiplyTable();
+// getMultiplyTable();

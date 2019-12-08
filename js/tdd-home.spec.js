@@ -35,7 +35,7 @@ describe('tdd-home.js -> It should remove all values from list a, which are pres
   });
 
   it('Basic test', function () {
-    expect(arrayDiff([3, 4], [3])).toEqual([4]);
+    expect(arrayDiff([3, 4], [3, 3])).toEqual([4]);
   });
 
   it('Removing empty array should return array without diff', function () {
