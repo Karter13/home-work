@@ -23,9 +23,7 @@ console.log(evenOrOdd(666));
 
 
 function centuryFromYear(year) {
-  const transmittedYear = year;
-
-  return Math.ceil(transmittedYear / 100);
+  return Math.ceil(year / 100);
 }
 
 console.log(centuryFromYear(1765));
