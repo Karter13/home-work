@@ -20,15 +20,17 @@ function getNumWord(num, word1, word2, word5) {
   return result;
 }
 
+// eslint-disable-next-line consistent-return
 function makeTest() {
   const applesCount = parseInt(prompt('Сколько яблок?'), 10);
   if (applesCount) {
-    alert(`У вас ${applesCount} ${getNumWord(applesCount,
-      'яблоко', 'яблока', 'яблок')}`);
+    return `У вас ${applesCount} ${getNumWord(applesCount,
+      'яблоко', 'яблока', 'яблок')}`;
   }
+  return false;
 }
 
-makeTest();
+console.log(makeTest());
 
 
 function isPolindrom1(str) {
@@ -44,7 +46,7 @@ function isPolindrom1(str) {
   return result === str;
 }
 
-console.log(isPolindrom1('55055'));
+console.log(isPolindrom1('rrrr'));
 
 
 function isPolindrom2(str) {
@@ -73,32 +75,32 @@ function isPolindrom3(str) {
   }
   return result;
 }
-console.log(isPolindrom3('113321'));
-
+console.log(isPolindrom3('ggggg'));
 
 // Fixed bug
-function getMultiplyTable() {
-  const { body } = document;
-  const table = document.createElement('table');
-  let tr; let td;
-  table.style.width = '100%';
-  table.setAttribute('border', '1');
+// function getMultiplyTable() {
+//   const { body } = document;
+//   const table = document.createElement('table');
+//   let tr; let td;
+//   table.style.width = '100%';
+//   table.setAttribute('border', '1');
 
-  for (let i = 1; i <= 10; i++) {
-    if (i === 1 || i === 6) {
-      tr = document.createElement('tr');
-    }
-    td = document.createElement('td');
-    for (let j = 1; j <= 10; j++) {
-      td.innerHTML += `<div style="padding: 5px">${i} * ${j} = ${i * j}</div>`;
-    }
-    tr.append(td);
-    if (i === 5 || i === 10) {
-      table.append(tr);
-    }
-  }
+//   for (let i = 1; i <= 10; i++) {
+//     if (i === 1 || i === 6) {
+//       tr = document.createElement('tr');
+//     }
+//     td = document.createElement('td');
+//     for (let j = 1; j <= 10; j++) {
+// eslint-disable-next-line max-len
+//       td.innerHTML += `<div style="padding: 5px">${i} * ${j} = ${i * j}</div>`;
+//     }
+//     tr.append(td);
+//     if (i === 5 || i === 10) {
+//       table.append(tr);
+//     }
+//   }
 
-  body.append(table);
-}
+//   body.append(table);
+// }
 
-getMultiplyTable();
+// getMultiplyTable();
