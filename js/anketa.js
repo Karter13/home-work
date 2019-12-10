@@ -1,8 +1,8 @@
-// let userSurname = prompt('Ваша фамилия?', '');
-// let userName = prompt('Ваше имя?', '');
-// let userPatronymic = prompt('Ваше отчество?', '');
-// let userAge = +prompt('Сколько Вам полных лет?', '');
-// const userSex = confirm('Ваш пол мужской?');
+let userSurname = prompt('Ваша фамилия?', '');
+let userName = prompt('Ваше имя?', '');
+let userPatronymic = prompt('Ваше отчество?', '');
+let userAge = +prompt('Сколько Вам полных лет?', '');
+const userSex = confirm('Ваш пол мужской?');
 
 
 function checkUserNames(value, message) {
@@ -15,9 +15,9 @@ function checkUserNames(value, message) {
   }
   return result;
 }
-// userSurname = checkUserNames(userSurname, 'Ваша фамилия?');
-// userName = checkUserNames(userName, 'Ваше имя?');
-// userPatronymic = checkUserNames(userPatronymic, 'Ваше отчество?');
+userSurname = checkUserNames(userSurname, 'Ваша фамилия?');
+userName = checkUserNames(userName, 'Ваше имя?');
+userPatronymic = checkUserNames(userPatronymic, 'Ваше отчество?');
 
 
 function getFullUserAge(value, message) {
@@ -31,7 +31,7 @@ function getFullUserAge(value, message) {
   }
   return fullUserAge;
 }
-// userAge = getFullUserAge(userAge, 'Сколько Вам полных лет?');
+userAge = getFullUserAge(userAge, 'Сколько Вам полных лет?');
 
 
 function getUserssex(value) {
@@ -41,15 +41,15 @@ function getUserssex(value) {
 
 function getAnswerAboutPension(age, sex) {
   // eslint-disable-next-line no-mixed-operators
-  if (sex && age >= 63 || !sex && age >= 58) {
+  if (sex === 'мужской' && age >= 63 || sex === 'женский' && age >= 58) {
     return 'Да!';
   }
   return 'Нет!';
 }
 
-// alert(`ваше ФИО: ${userSurname} ${userName} ${userPatronymic} 
-// ваш возраст в годах: ${userAge}
-// ваш возраст в днях: ${365 * userAge}
-// через 5 лет вам будет: ${userAge + 5}
-// ваш пол: ${getUserssex(userSex)}
-// вы на пенсии: ${getAnswerAboutPension(userAge, userSex)}`);
+alert(`ваше ФИО: ${userSurname} ${userName} ${userPatronymic} 
+ваш возраст в годах: ${userAge}
+ваш возраст в днях: ${365 * userAge}
+через 5 лет вам будет: ${userAge + 5}
+ваш пол: ${getUserssex(userSex)}
+вы на пенсии: ${getAnswerAboutPension(userAge, userSex)}`);
