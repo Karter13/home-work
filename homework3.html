@@ -5,16 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homework3</title>
+    <title>Notes</title>
     <link rel="stylesheet" href="css/homework3.css">
 </head>
 
 <body>
 
+    <main>
+        <div class="container">
+
+            <h1 class="title">Список заметок</h1>
+
+            <div class="nwenotes">
+                <div class="nwenotes-block">
+                    <input class="nwenotes-title" type="text" placeholder="Введите заголовок новой заметки">
+                    <span class="nwenotes-check">Добавить заметку</span>
+                </div>
+
+                <span class="nwenotes-mistake">Такая заметка уже существует!!! Введите другой заголовок!!!</span>
+
+                <textarea class="nwenotes-text" cols="50" rows="50" placeholder="Введите содержимое заметки"></textarea>
+                <!-- <input class="nwenotes-text" type="text" placeholder="Введите содержимое заметки"> -->
+                <span class="nwenotes-add">Сохранить</span>
+            </div>
 
 
+            <div class="notes">
+                <div class="notes-block">
+                    <input class="notes-title" type="text" placeholder="Введите заголовок заметки для поиска">
+                    <span class="notes-find">Найти заметку</span>
+                </div>
 
-    <script src="/js/Notes.js"></script>
+                <span class="notes-mistake">Заметки нет в списке!!! Повторите поиск!!!</span>
+
+                <button class="notes-remove">Удаление заметки</button>
+                <button class="notes-show">Вывод содержимого заметки</button>
+                <div class="notes-text"></div>
+                <button class="notes-hide">Скрыть содержимое заметки</button>
+
+            </div>
+
+
+            <div class="list">
+                <button class="list-notes_show">Вывод списка заметок</button>
+                <div class="list-notes">1</div>
+                <button class="list-notes_hide">Скрыть список</button>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="/js/notes.js"></script>
 </body>
 
 </html>
