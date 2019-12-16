@@ -109,11 +109,19 @@ body {
 }
 
 .notes-text {
+  word-break: break-all;
+  margin: 0 auto 10px;
   display: none;
+  width: 75%;
+  padding: 5px;
+  background-color: white;
 }
 
 .notes-hide {
+  margin: 0 auto;
   display: none;
+  height: 30px;
+  font-weight: bold;
 }
 
 .list-notes {
