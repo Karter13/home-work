@@ -88,6 +88,7 @@ const Notes = (function () {
   };
 }());
 
+const SHOW = 'show';
 
 const UI = {
   noteTitle: document.getElementById('note-title'),
@@ -126,22 +127,22 @@ const UI = {
   handelNoteResponse(result) {
     if (result.done) {
       this.clearValue();
-      this.errorMessage.classList.remove('show');
+      this.errorMessage.classList.remove(SHOW);
       this.renderListNotes();
     } else {
       this.errorMessage.innerHTML = result.error;
-      this.errorMessage.classList.add('show');
+      this.errorMessage.classList.add(SHOW);
     }
   },
 
   handelNotBodyResponse(result) {
     if (result.done) {
       this.clearValue();
-      this.errorMessage.classList.remove('show');
+      this.errorMessage.classList.remove(SHOW);
       this.sowBodyNote(result.text);
     } else {
       this.errorMessage.innerHTML = result.error;
-      this.errorMessage.classList.add('show');
+      this.errorMessage.classList.add(SHOW);
     }
   },
 
