@@ -149,21 +149,21 @@ const UI = {
 };
 
 
-UI.addNoteButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const result = Notes.addNote(UI.noteTitle.value, UI.noteBody.value);
-  UI.handelNoteResponse(result);
-});
+// UI.addNoteButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   const result = Notes.addNote(UI.noteTitle.value, UI.noteBody.value);
+//   UI.handelNoteResponse(result);
+// });
 
-UI.removeNoteButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  const result = Notes.removeNote(UI.noteTitle.value);
-  UI.handelNoteResponse(result);
-});
+// UI.removeNoteButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   const result = Notes.removeNote(UI.noteTitle.value);
+//   UI.handelNoteResponse(result);
+// });
 
-UI.showNoteBodySutton.addEventListener('click', (event) => {
-  event.preventDefault();
+// UI.showNoteBodySutton.addEventListener('click', (event) => {
+//   event.preventDefault();
 
-  const result = Notes.showNote(UI.noteTitle.value);
-  UI.handelNotBodyResponse(result);
-});
+//   const result = Notes.showNote(UI.noteTitle.value);
+//   UI.handelNotBodyResponse(result);
+// });
