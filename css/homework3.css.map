@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAC;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CAAG;;AAC3B,AAAA,IAAI,CAAC;EACH,MAAM,EAAE,IAAI;CAAG;;AACjB,AAAA,MAAM,CAAC;EACL,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,IAAI;CAAG;;AAClB,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,KAAK;CAAG",
+    "sources": [
+        "../sass/block/homework3.sass"
+    ],
+    "names": [],
+    "file": "homework3.css"
+}
