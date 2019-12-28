@@ -72,40 +72,31 @@ const UsersSort = (function () {
     return false;
   }
 
+  function sortAsc(a, b) {
+    if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
+    if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
+  }
+  function sorDesc(a, b) {
+    if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
+    if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
+  }
+
   function sortString(param1, param3) {
     if (param3 === 'asc') {
-      return param1.sort((a, b) => {
-        const aname = a.name.toLowerCase();
-        const bname = b.name.toLowerCase();
-        if (aname > bname) return 1;
-        if (aname < bname) return -1;
-      });
+      return param1.sort(sortAsc);
     }
     if (param3 === 'desc') {
-      return param1.sort((a, b) => {
-        const aname = a.name.toLowerCase();
-        const bname = b.name.toLowerCase();
-        if (aname > bname) return -1;
-        if (aname < bname) return 1;
-      });
+      return param1.sort(sorDesc);
     }
     return false;
   }
 
   function sortDate(param1, param3) {
     if (param3 === 'asc') {
-      return param1.sort((a, b) => {
-        const adate = new Date(a.dob);
-        const bdate = new Date(b.dob);
-        return adate - bdate;
-      });
+      return param1.sort((a, b) => new Date(a.dob) - new Date(b.dob));
     }
     if (param3 === 'desc') {
-      return param1.sort((a, b) => {
-        const adate = new Date(a.dob);
-        const bdate = new Date(b.dob);
-        return bdate - adate;
-      });
+      return param1.sort((a, b) => new Date(b.dob) - new Date(a.dob));
     }
     return false;
   }
@@ -129,4 +120,4 @@ const UsersSort = (function () {
     },
   };
 }());
-console.log(UsersSort.users(Users, 'id', 'asc'));
+console.log(UsersSort.users(Users, 'name', 'asc'));
