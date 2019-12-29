@@ -1,4 +1,5 @@
 describe('notes.js -> initNotes -> return array', function () {
+
   it('reading data from localStorage', function () {
 
     localStorage.setItem('notes', '[{"title": "note1", "body": "text"}]');
@@ -9,7 +10,6 @@ describe('notes.js -> initNotes -> return array', function () {
     }]);
   });
 });
-
 
 describe('notes.js -> addNoteContent -> added note', function () {
   it('return true - false', function () {
