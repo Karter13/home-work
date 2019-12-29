@@ -1,57 +1,57 @@
-moment.locale('ru');
+// moment.locale('ru');
 
-const timer = document.querySelector('#timer');
+// const timer = document.querySelector('#timer');
 
-function calculateDifferenceTime() {
-  const dayNow = moment();
-  const dayEnd = moment().endOf('day');
-  const difference = dayEnd.diff(dayNow, 's');
+// function calculateDifferenceTime() {
+//   const dayNow = moment();
+//   const dayEnd = moment().endOf('day');
+//   const difference = dayEnd.diff(dayNow, 's');
 
-  timer.innerHTML = `до конца дня осталось ${difference} секунд`;
-}
+//   timer.innerHTML = `до конца дня осталось ${difference} секунд`;
+// }
 
-calculateDifferenceTime();
-setInterval(calculateDifferenceTime, 1000);
+// calculateDifferenceTime();
+// setInterval(calculateDifferenceTime, 1000);
 
-const DayForBirthday = (function () {
-  const input = document.getElementById('birthday-date');
-  const daysToBirthday = document.getElementById('days-tobirthday');
-  const button = document.getElementById('show-days');
+// const DayForBirthday = (function () {
+//   const input = document.getElementById('birthday-date');
+//   const daysToBirthday = document.getElementById('days-tobirthday');
+//   const button = document.getElementById('show-days');
 
-  function showHours(thisYear) {
-    const nextYear = thisYear + 1;
-    const dateBirth = input.value;
-    const dayNow = moment();
-    let dayBirthday = moment(dateBirth).year(thisYear);
+//   function showHours(thisYear) {
+//     const nextYear = thisYear + 1;
+//     const dateBirth = input.value;
+//     const dayNow = moment();
+//     let dayBirthday = moment(dateBirth).year(thisYear);
 
-    if (dayNow > dayBirthday) {
-      dayBirthday = moment(dateBirth).year(nextYear);
-    }
+//     if (dayNow > dayBirthday) {
+//       dayBirthday = moment(dateBirth).year(nextYear);
+//     }
 
-    const difference = dayBirthday.diff(dayNow, 'd');
-    daysToBirthday.innerHTML = difference;
-  }
+//     const difference = dayBirthday.diff(dayNow, 'd');
+//     daysToBirthday.innerHTML = difference;
+//   }
 
-  button.addEventListener('click', () => {
-    showHours(2019);
-  });
-}());
+//   button.addEventListener('click', () => {
+//     showHours(2019);
+//   });
+// }());
 
 
-function cleanString(newString) {
-  let str = newString;
+// function cleanString(newString) {
+//   let str = newString;
 
-  const cenzrBlock = {
-    конь: '*****',
-    столб: '*****',
-  };
+//   const cenzrBlock = {
+//     конь: '*****',
+//     столб: '*****',
+//   };
 
-  for (const key in cenzrBlock) {
-    str = str.split(key).join(cenzrBlock[key]);
-  }
-  return str;
-}
-console.log(cleanString('Моя мама мыла столб, на улице стоит конь'));
+//   for (const key in cenzrBlock) {
+//     str = str.split(key).join(cenzrBlock[key]);
+//   }
+//   return str;
+// }
+// console.log(cleanString('Моя мама мыла столб, на улице стоит конь'));
 
 
 // const Users = [
@@ -72,33 +72,26 @@ console.log(cleanString('Моя мама мыла столб, на улице с
 //     return false;
 //   }
 
-//   function sortAsc(a, b) {
-//     if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-//     if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-//   }
-//   function sorDesc(a, b) {
-//     if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
-//     if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
-//   }
-
 //   function sortString(param1, param3) {
-//     if (param3 === 'asc') {
-//       return param1.sort(sortAsc);
-//     }
-//     if (param3 === 'desc') {
-//       return param1.sort(sorDesc);
-//     }
-//     return false;
+//     return param1.sort((a, b) => {
+//       const aname = a.name.toLowerCase();
+//       const bname = b.name.toLowerCase();
+//       if (param3 === 'asc') {
+//         if (aname > bname) return 1;
+//         if (aname < bname) return -1;
+//       } else {
+//         if (aname < bname) return 1;
+//         if (aname > bname) return -1;
+//       }
+//     });
 //   }
 
 //   function sortDate(param1, param3) {
-//     if (param3 === 'asc') {
-//       return param1.sort((a, b) => new Date(a.dob) - new Date(b.dob));
-//     }
-//     if (param3 === 'desc') {
-//       return param1.sort((a, b) => new Date(b.dob) - new Date(a.dob));
-//     }
-//     return false;
+//     return param1.sort((a, b) => {
+//       const adate = new Date(a.dob);
+//       const bdate = new Date(b.dob);
+//       return (param3 === 'asc') ? adate - bdate : bdate - adate;
+//     });
 //   }
 
 //   function chengeArray(param1, param2, param3) {
@@ -141,19 +134,18 @@ const UsersSort = (function () {
   }
 
   function sortString(param1, param2, param3) {
-    if (param3 === 'asc') {
-      return param1.sort((a, b) => {
-        if (a[param2].toLowerCase() > b[param2].toLowerCase()) return 1;
-        if (a[param2].toLowerCase() < b[param2].toLowerCase()) return -1;
-      });
-    }
-    if (param3 === 'desc') {
-      return param1.sort((a, b) => {
-        if (a[param2].toLowerCase() > b[param2].toLowerCase()) return -1;
-        if (a[param2].toLowerCase() < b[param2].toLowerCase()) return 1;
-      });
-    }
-    return false;
+
+    return param1.sort((a, b) => {
+      const aparam = a[param2].toLowerCase();
+      const bparam = b[param2].toLowerCase();
+      if (param3 === 'asc') {
+        if (aparam > bparam) return 1;
+        if (aparam < bparam) return -1;
+      } else {
+        if (aparam < bparam) return 1;
+        if (aparam > bparam) return -1;
+      }
+    });
   }
 
   function chengeArray(param1, param2, param3) {
@@ -172,4 +164,4 @@ const UsersSort = (function () {
     },
   };
 }());
-console.log(UsersSort.users(Users, 'dob', 'asc'));
+console.log(UsersSort.users(Users, 'dob', 'desc'));
