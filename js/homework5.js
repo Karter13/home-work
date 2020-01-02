@@ -75,9 +75,9 @@ function Timer2(element, textMessage, number, timer) {
   };
 }
 
-const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1);
-// eslint-disable-next-line max-len
-const timer2 = new Timer2(message, dataForTimer.message2, dataForTimer.timer2, '6000');
+// const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1);
+// // eslint-disable-next-line max-len
+// const timer2 = new Timer2(message, dataForTimer.message2, dataForTimer.timer2, '6000');
 
 function showResult() {
   message.innerHTML = '';
@@ -85,6 +85,8 @@ function showResult() {
 }
 
 startBtn.addEventListener('click', () => {
+  const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1);
+  const timer2 = new Timer2(message, dataForTimer.message2, dataForTimer.timer2, '6000');
   pulse.value = '';
   timer1.showMessage();
   timer2.showNextMessage();
