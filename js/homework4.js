@@ -134,7 +134,6 @@ const UsersSort = (function () {
   }
 
   function sortString(param1, param2, param3) {
-
     return param1.sort((a, b) => {
       const aparam = a[param2].toLowerCase();
       const bparam = b[param2].toLowerCase();
