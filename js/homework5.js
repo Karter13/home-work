@@ -52,7 +52,8 @@ const dataForTimer = {
   timer2: 15,
 };
 
-function Timer2(element, textMessage, number, timer) {
+// eslint-disable-next-line no-shadow
+function Timer2(element, textMessage, number, runTimer) {
   const elem = element;
   let count = number;
   const text = textMessage;
@@ -62,34 +63,30 @@ function Timer2(element, textMessage, number, timer) {
     intervalId = setInterval(() => {
       if (count <= 0) {
         clearInterval(intervalId);
+        if (runTimer) {
+          runTimer();
+        }
       }
       elem.innerHTML = ` ${text} ${count}`;
       count -= 1;
     }, 1000);
   };
-
-  this.showNextMessage = () => {
-    setTimeout(() => {
-      this.showMessage();
-    }, timer);
-  };
 }
-
-// const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1);
-// // eslint-disable-next-line max-len
-// const timer2 = new Timer2(message, dataForTimer.message2, dataForTimer.timer2, '6000');
 
 function showResult() {
   message.innerHTML = '';
   message.innerHTML = ` Ваш пульс ${+pulse.value * 4} ударов в минуту`;
 }
 
+function nextTimer() {
+  const timer = new Timer2(message, dataForTimer.message2, dataForTimer.timer2);
+  timer.showMessage();
+}
+
 startBtn.addEventListener('click', () => {
-  const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1);
-  const timer2 = new Timer2(message, dataForTimer.message2, dataForTimer.timer2, '6000');
+  const timer1 = new Timer2(message, dataForTimer.message1, dataForTimer.timer1, nextTimer);
   pulse.value = '';
   timer1.showMessage();
-  timer2.showNextMessage();
 });
 
 resultBtn.addEventListener('click', showResult);
