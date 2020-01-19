@@ -1,0 +1,22 @@
+{
+  "posts": [],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [],
+  "cars": [
+    {
+      "car": "BMV",
+      "model": "X7",
+      "year": "2020",
+      "id": 1
+    },
+    {
+      "car": "Audi",
+      "model": "Q7",
+      "year": "2020",
+      "id": 1
+    }
+  ]
+}
