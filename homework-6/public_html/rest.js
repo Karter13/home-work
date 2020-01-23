@@ -2,32 +2,20 @@
 'use strct';
 
 const SERVER_API = 'http://localhost:3006';
+const RESURS = 'cars';
 
-function RestServer(serverApi) {
+function RestServer(serverApi, name, func1, func2) {
   this.serverApi = serverApi;
-  this.name = 'cars';
-  this.car = document.getElementById('car');
-  this.model = document.getElementById('model');
-  this.description = document.getElementById('description');
-  this.sendButton = document.getElementById('send-data');
-  this.getButton = document.getElementById('get-data');
+  this.name = name;
+  this.func = func1;
+  this.funcGet = func2;
 }
 
-RestServer.prototype.getDataFromForm = function () {
-  const car = this.car.value;
-  const model = this.model.value;
-  const description = this.description.value;
-
-  return { car, model, description };
-};
-
 RestServer.prototype.addData = function () {
-  const data = this.getDataFromForm();
-
   const xhr = new XMLHttpRequest();
   xhr.open('POST', `${this.serverApi}/${this.name}`);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(data));
+  xhr.send(JSON.stringify(this.funcGet()));
 
   xhr.onload = () => {
     if (xhr.status === 201) {
@@ -44,7 +32,7 @@ RestServer.prototype.getData = function () {
 
   xhr.onload = () => {
     if (xhr.status === 200) {
-      this.renderResponse(xhr.response);
+      this.func(xhr.response);
     }
   };
 };
@@ -60,19 +48,25 @@ RestServer.prototype.deleteData = function (id) {
 };
 
 RestServer.prototype.changeData = function (id) {
-  const data = this.getDataFromForm();
-
   const xhr = new XMLHttpRequest();
   xhr.open('PUT', `${this.serverApi}/${this.name}/${id}`);
   xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.send(JSON.stringify(data));
+  xhr.send(JSON.stringify(this.funcGet()));
 
   xhr.onload = () => {
     console.log(xhr.response);
   };
 };
 
-RestServer.prototype.renderResponse = function (response) {
+const getDataFromForm = () => {
+  const car = document.getElementById('car').value;
+  const model = document.getElementById('model').value;
+  const description = document.getElementById('description').value;
+
+  return { car, model, description };
+};
+
+const renderResponse = (response) => {
   response.forEach((car) => {
     const div = document.createElement('div');
     const template = `<h3>${car.car}</h3>
@@ -86,18 +80,19 @@ RestServer.prototype.renderResponse = function (response) {
 };
 
 
-const restServer = new RestServer(SERVER_API);
+const restServer = new RestServer(SERVER_API, RESURS, renderResponse, getDataFromForm);
 
 
-function eventListener(reServer) {
-  const server = reServer;
+const eventListener = () => {
+  const sendButton = document.getElementById('send-data');
+  const getButton = document.getElementById('get-data');
 
-  server.sendButton.addEventListener('click', () => {
+  sendButton.addEventListener('click', () => {
     restServer.addData();
   });
 
-  server.getButton.addEventListener('click', () => {
+  getButton.addEventListener('click', () => {
     restServer.getData();
   });
-}
+};
 eventListener(restServer);
