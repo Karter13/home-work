@@ -7,15 +7,15 @@ const RESURS = 'cars';
 function RestServer(serverApi, name, func1, func2) {
   this.serverApi = serverApi;
   this.name = name;
-  this.func = func1;
-  this.funcGet = func2;
+  this.funcGet = func1;
+  this.funcPost = func2;
 }
 
 RestServer.prototype.addData = function () {
   const xhr = new XMLHttpRequest();
   xhr.open('POST', `${this.serverApi}/${this.name}`);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.send(JSON.stringify(this.funcGet()));
+  xhr.send(JSON.stringify(this.funcPost()));
 
   xhr.onload = () => {
     if (xhr.status === 201) {
@@ -32,7 +32,7 @@ RestServer.prototype.getData = function () {
 
   xhr.onload = () => {
     if (xhr.status === 200) {
-      this.func(xhr.response);
+      this.funcGet(xhr.response);
     }
   };
 };
@@ -51,7 +51,7 @@ RestServer.prototype.changeData = function (id) {
   const xhr = new XMLHttpRequest();
   xhr.open('PUT', `${this.serverApi}/${this.name}/${id}`);
   xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.send(JSON.stringify(this.funcGet()));
+  xhr.send(JSON.stringify(this.funcPost()));
 
   xhr.onload = () => {
     console.log(xhr.response);
