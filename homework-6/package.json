@@ -1,0 +1,18 @@
+{
+  "name": "homework-6",
+  "version": "1.0.0",
+  "description": "Budget APP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./public_html -a localhost -p 8082 -c-1",
+    "start-json": "json-server --watch ./public_html/db.json --port 3006"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "json-server": "^0.14.2"
+  },
+  "dependencies": {}
+}
