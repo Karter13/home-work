@@ -1,7 +1,7 @@
 {
-  "name": "lesson-12",
+  "name": "homework-7",
   "version": "1.0.0",
-  "main": "es6-1.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress -p",

@@ -18,24 +18,23 @@ class DarkSky {
 }
 
 const render = (data) => {
-  const cardWeather = document.querySelector('.cardweather');
+  const cardWeather = document.querySelector('.cardweather'); git
   const div = document.createElement('div');
   let template = '';
   console.log(data);
   cardWeather.innerHTML = '';
   template = `<div class="card" style="width: 30rem;">
                         <div class="header">
-                          Timezone: ${data.timezone}
+                          Часовой пояс: ${data.timezone}
                         </div>
                         <ul class="list">
-                          <li>latitude: ${data.latitude}</li>
-                          <li>longitude: ${data.longitude}</li>
-                          <li>summary: ${data.currently.summary}</li>
-                          <li>temperature: ${data.currently.temperature}</li>
-                          <li>windSpeed: ${data.currently.windSpeed}</li>
-                          <li>cloudCover: ${data.currently.cloudCover}</li>
+                          <li>Широта:  ${data.latitude}</li>
+                          <li>Долгота:  ${data.longitude}</li>
+                          <li>Погода:  ${data.currently.summary}</li>
+                          <li>Температура:  ${data.currently.temperature}</li>
+                          <li>Ветер м/с:  ${data.currently.windSpeed}</li>
                         </ul>
-                      </div>`;
+                      </div>`; git
   div.innerHTML = template;
   cardWeather.append(div);
 };
