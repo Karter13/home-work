@@ -1,24 +1,25 @@
 class DarkSky {
   constructor(render) {
-    this.proxy = 'https://cors-anywhere.herokuapp.com/';
-    this.api = 'https://api.darksky.net/forecast/3d8590dd8146eaf94eac55c25d4ad305/';
+    this.proxy = 'https://cors-anywhere.herokuapp.com';
+    this.api = 'https://api.darksky.net/forecast/3d8590dd8146eaf94eac55c25d4ad305';
     this.render = render;
   }
 
   getData(coordinates) {
-    fetch(`${this.proxy}${this.api}${coordinates}?lang=ru`)
+    fetch(`${this.proxy}/${this.api}/${coordinates}?lang=ru`)
       .then((response) => {
         if (response.status === 200) {
           return response.json();
         }
         throw new Error(`data not received status: ${response.status}`);
       })
-      .then((data) => this.render(data));
+      .then((data) => this.render(data))
+      .catch(console.log);
   };
 }
 
 const render = (data) => {
-  const cardWeather = document.querySelector('.cardweather'); git
+  const cardWeather = document.querySelector('.cardweather');
   const div = document.createElement('div');
   let template = '';
   console.log(data);
@@ -34,7 +35,7 @@ const render = (data) => {
                           <li>Температура:  ${data.currently.temperature}</li>
                           <li>Ветер м/с:  ${data.currently.windSpeed}</li>
                         </ul>
-                      </div>`; git
+                      </div>`;
   div.innerHTML = template;
   cardWeather.append(div);
 };
