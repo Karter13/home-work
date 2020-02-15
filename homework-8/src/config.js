@@ -1,0 +1,22 @@
+export const CONFIG = {
+  api: 'http://localhost:3006',
+  selectors: {
+    mainContentPages: '.main .page',
+    homePage: '.all-news',
+    allNews: '.single-card',
+    news: '.news',
+    singleNews: '.single-news',
+    singlePageContent: '.one-card',
+    btnPrimari: '.btn-primary',
+    btnSearch: '.btn-outline-primary',
+    searchInput: '.form-control',
+    searchPage: '.search',
+    searchCard: '.saerch-card',
+    errorPage: '.error',
+    btnAboutPage: '.navbar-brand',
+    aboutPage: '.about',
+    button: '.btn-about',
+  },
+  none: 'none',
+  block: 'block',
+};
