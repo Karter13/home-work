@@ -169,4 +169,11 @@ export class PageRender {
     aboutPage.style.display = CONFIG.block;
     this.activButonAboutPage();
   }
+
+  renderAllElements(data) {
+    this.getAllNews(data);
+    this.initSinglNewsPage();
+    this.initSerchPsge();
+    this.initAboutPage();
+  }
 }

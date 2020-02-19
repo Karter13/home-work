@@ -24,10 +24,11 @@ class App {
       .then((res) => res.json())
       .then((data) => {
         this.news = data;
-        this.pageRender.getAllNews(data);
-        this.pageRender.initSinglNewsPage();
-        this.pageRender.initSerchPsge();
-        this.pageRender.initAboutPage();
+        this.pageRender.renderAllElements(data);
+        // this.pageRender.getAllNews(data);
+        // this.pageRender.initSinglNewsPage();
+        // this.pageRender.initSerchPsge();
+        // this.pageRender.initAboutPage();
         this.initRouter();
         this.router.render(decodeURI(location.pathname));
       });
